@@ -5,14 +5,42 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    name: '',
+    classification: '',
+    score: 0,
+    durTime: 0,
+    difficulty: '',
+    comments: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
 
+  onLoad (query) {
+    // 这里的 query 将是 url 中，问号(?) 后面的键值对组成的一个对象
+    let classificationArray = query['classification'].split("/")
+    let classStr= ''
+    for(let i of classificationArray){
+      classStr += '    '
+      classStr+=i
+      classStr +='\n'
+    }
+    let commentsArray = query['comments'].split("/")
+    let commentsStr = ''
+    for (let i of commentsArray) {
+      commentsStr += '    '
+      commentsStr += i
+      commentsStr += '\n'
+    }
+    this.setData({
+      name: query.name,
+      classification: classStr,
+      score: query.score,
+      durTime: query.durTime,
+      difficulty: query.difficulty,
+      comments: commentsStr
+    });
   },
 
   /**

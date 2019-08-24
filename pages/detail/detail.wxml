@@ -1,2 +1,18 @@
-<!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<!-- pages/detail/detail.wxml
+<text>pages/detail/detail.wxml</text> -->
+<view class='h2' style='text-align:center;'>{{name}}</view>
+<text>\n</text>
+<view class='h2'>影响因子： {{score}}</view>
+<view class='h2'>投稿周期： {{durTime}}个月</view>
+<view class='h2'>投稿难度： {{difficulty}}</view>
+<view class='h2'>投稿内容： </view>
+<text> </text>
+<text space="ensp" decode="{{true}}" class='h3'>{{classification}}</text>
+<text> </text>
+<view class='h2'>投稿经验： </view>
+<text> </text>
+<text space="ensp" decode="{{true}}" class='h3'> {{comments}}</text>
+<view class="weui-footer">
+  数据来自于MedSci和LetPub的提炼和本人的经验
+  如有补充，请联系邮箱szxszx@foxmail.com
+</view>

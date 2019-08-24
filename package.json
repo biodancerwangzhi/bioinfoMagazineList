@@ -1,0 +1,23 @@
+{
+  "name": "wechatminiprogram",
+  "version": "1.0.0",
+  "description": "第一次做小程序，做个简单的，用于查询生信sci杂志投稿信息。",
+  "main": "app.js",
+  "dependencies": {
+    "miniprogram-computed": "^2.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biodancerwangzhi/bioinfoMagazineList.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/biodancerwangzhi/bioinfoMagazineList/issues"
+  },
+  "homepage": "https://github.com/biodancerwangzhi/bioinfoMagazineList#readme"
+}

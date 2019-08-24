@@ -1,0 +1,51 @@
+<!--components/table.wxml-->
+<view>
+  <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+          <view class="weui-search-bar__box">
+              <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+              <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+              <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                  <icon type="clear" size="14"></icon>
+              </view>
+          </view>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+  </view>
+
+  <view class="table">
+    <view class="tr bg-w">
+      <view class="th thName">杂志</view>
+      <view class="th thScore" data-index="{{daIndex1}}" bindtap="sort1">影响因子
+        <image class='img' src="{{imageUrl1}}"></image>
+      </view>
+      <view class="th thDurTime" data-index="{{daIndex2}}" bindtap="sort2">审稿周期
+        <image class='img' src="{{imageUrl2}}"></image>
+      </view>
+      <view class="th thDifficulty">投稿难度</view>
+    </view>
+    <view class="table-wrap">
+      <block wx:for="{{filterData}}"  wx:key="{{code}}">
+        <view class="bg-g" wx:if="{{index % 2 == 0}}">
+          <navigator hover-class="navigator-hover" class="navigatorHover tr"  url="/pages/detail/detail?name={{item.name}}&classification={{item.classification}}&&score={{item.score}}&durTime={{item.durTime}}&difficulty={{item.difficulty}}&comments={{item.comments}}">              
+            <view class="td nameCol">{{item.name}}</view>
+            <view class="td scoreCol">{{item.score}}</view>
+            <view class="td durTimeCol">{{item.durTime}} m</view>
+            <view class="td difficultyCol">{{item.difficulty}}</view>
+          </navigator>
+        </view> 
+        
+        <view wx:else>
+          <navigator hover-class="navigator-hover" class="navigatorHover tr"  url="/pages/detail/detail?name={{item.name}}&classification={{item.classification}}&&score={{item.score}}&durTime={{item.durTime}}&difficulty={{item.difficulty}}&comments={{item.comments}}">         
+            <view class="td nameCol">{{item.name}}</view>
+            <view class="td scoreCol">{{item.score}}</view>
+            <view class="td durTimeCol">{{item.durTime}} m</view>
+            <view class="td difficultyCol">{{item.difficulty}}</view>
+          </navigator>  
+        </view>
+      </block>    
+    </view>
+  </view>
+
+  </view>
+
